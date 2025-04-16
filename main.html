@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Personal Details Form with CAPTCHA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="container">
+        <h2>Personal Details Form</h2>
+        <form id="personalForm">
+            <div class="row">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label>Gender:</label>
+                    <div class="gender-group">
+                        <label><input type="radio" name="gender" value="male" required> Male</label>
+                        <label><input type="radio" name="gender" value="female"> Female</label>
+                        <label><input type="radio" name="gender" value="other"> Other</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="country">Country:</label>
+                    <select id="country" name="country" required>
+                        <option value="">Select Country</option>
+                        <option value="India">India</option>
+                        <option value="USA">USA</option>
+                        <option value="UK">UK</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Australia">Australia</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+            </div>
+
+            <p id="passwordMessage" class="error"></p>
+
+            <div class="captcha-section">
+                <div class="captcha-row">
+                    <div class="checkbox-container"style="margin-left: 200px;">
+                        <input type="checkbox" id="robotCheckbox">
+                        <label for="robotCheckbox">
+                            <span class="checkbox-text">I'm not a robot</span>
+                            <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" class="robot-logo" alt="CAPTCHA logo">
+                        </label>
+                    </div>
+
+                    <div class="captcha-container"style="margin-left: 50px;">
+                        <canvas id="captchaCanvas"></canvas>
+                        <button id="refreshCaptcha">🔄</button>
+                        <button id="playCaptcha">🔊</button>
+                        <input type="text" id="captchaInput" placeholder="Enter CAPTCHA">
+                        <button id="verifyCaptcha">Verify</button>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+
+        <p id="message"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

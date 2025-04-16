@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&w=1400&q=80') no-repeat center center / cover;
+    z-index: -1;
+    filter: blur(10px);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 700px;
+    width: 90%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(8px);
+    z-index: 1;
+}
+
+h2, h3 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form .row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 6px;
+    color: #555;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="date"],
+select {
+    padding: 10px 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus {
+    border-color: #0077ff;
+    outline: none;
+}
+
+.gender-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 4px;
+}
+
+.gender-group label {
+    font-weight: normal;
+}
+
+button {
+    padding: 10px 18px;
+    background-color: #0077ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #005dd1;
+}
+
+button.submit-btn {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: -12px;
+    margin-bottom: 10px;
+}
+
+.captcha-section {
+    margin-top: 20px;
+}
+
+.captcha-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
+
+.robot-logo {
+    width: 24px;
+    height: 24px;
+    margin-left: 8px;
+}
+
+.captcha-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#captchaCanvas {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    height: 40px;
+    width: 120px;
+    font-size: 18px;
+}
+
+#captchaInput {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+#refreshCaptcha,
+#playCaptcha,
+#verifyCaptcha {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
